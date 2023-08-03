@@ -1,0 +1,5 @@
+<div class="product-list">
+  <div *ngFor="let productItem of productList">
+    <app-product-item [productItem]="productItem" (click)="navigateToProductDetail(productItem.id)"></app-product-item>
+  </div>
+</div>

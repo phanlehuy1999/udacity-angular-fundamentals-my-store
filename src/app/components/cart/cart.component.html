@@ -1,0 +1,101 @@
+<div class="cart">
+  <div class="product-list">
+    <mat-selection-list
+      #productSelectionList
+      (selectionChange)="onSelectionChange(productSelectionList.selectedOptions.selected)"
+    >
+      <mat-list-option *ngFor="let product of productCartList" [value]="product">
+        <app-cart-item
+          [product]="product"
+          (quantityChanged)="onQuantityChanged()"
+          (emitDeleteProduct)="onDeleteProduct($event)"
+        ></app-cart-item>
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+  <mat-card class="confirmation-info">
+    <mat-card-header>
+      <mat-card-subtitle>Selected: {{ productSelectionList.selectedOptions.selected.length }}</mat-card-subtitle>
+      <mat-error *ngIf="!productSelectionList.selectedOptions.selected.length">
+        *Please select product
+      </mat-error>
+      <mat-card-title>Total: ${{ total }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field>
+        <input
+          #fullName
+          placeholder="(minimum 3 characters)"
+          matInput
+          [formControl]="fullNameControl"
+          maxlength="50"
+        />
+        <mat-label>
+          Full name
+        </mat-label>
+        <mat-hint align="end">{{ fullName.value.length }}/50</mat-hint>
+        <mat-error>
+          Please enter a valid name
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          #address
+          placeholder="(minimum 6 characters)"
+          matInput
+          [formControl]="addressControl"
+          maxlength="50"
+        />
+        <mat-label>
+          Address
+        </mat-label>
+        <mat-hint align="end">{{ address.value.length }}/50</mat-hint>
+        <mat-error>
+          Please enter a valid address
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          #creditNumber
+          placeholder="(16-digit number)"
+          matInput
+          [formControl]="creditNumberControl"
+          maxlength="16"
+        />
+        <mat-label>
+          Credit card number
+        </mat-label>
+        <mat-hint align="end">{{ creditNumber.value.length }}/16</mat-hint>
+        <mat-error>
+          Please enter a valid credit card number
+        </mat-error>
+      </mat-form-field>
+      <p>We'll never share your payment details with anyone else</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-stroked-button class="button-common" (click)="openDialogConfirmBack()">
+        Cancel
+      </button>
+      <button
+        mat-raised-button
+        class="button-common"
+        color="warn"
+        (click)="deleteMultiProducts()"
+        [disabled]="!productSelectionList.selectedOptions.selected.length"
+      >
+        Delete multi
+      </button>
+      <span class="example-spacer"></span>
+      <button
+        mat-raised-button
+        color="primary"
+        class="button-common"
+        [disabled]="confirmFormGroup.invalid || !productSelectionList.selectedOptions.selected.length"
+        (click)="confirmOrder()"
+      >
+        <mat-icon>credit_card</mat-icon>
+        Submit
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

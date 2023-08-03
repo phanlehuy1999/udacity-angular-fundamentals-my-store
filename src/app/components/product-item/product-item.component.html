@@ -1,0 +1,13 @@
+<mat-card class="product-item">
+  <img mat-card-image [src]="productItem.url" alt="Product Image">
+  <mat-card-header>
+    <mat-card-title>{{ productItem.name }}</mat-card-title>
+    <mat-card-subtitle>{{ productItem.description }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions>
+    <button mat-fab extended color="primary" (click)="addToCart($event)">
+      <mat-icon>shopping_cart</mat-icon>
+      Add to cart
+    </button>
+  </mat-card-actions>
+</mat-card>

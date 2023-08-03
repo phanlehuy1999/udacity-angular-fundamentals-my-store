@@ -1,0 +1,36 @@
+:host {
+  .product-item-detail {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+
+    .image-border {
+      width: fit-content;
+      margin-left: auto;
+
+      img {
+        width: 300px;
+      }
+    }
+
+    .product-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .select-quantity {
+        width: 100px;
+      }
+
+      .button-add {
+        width: 200px;
+      }
+
+      .link-back {
+        margin-top: 100px;
+        width: 300px;
+      }
+    }
+  }
+}

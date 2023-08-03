@@ -1,0 +1,32 @@
+:host {
+  .confirmation {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    .success {
+      font-size: 4rem;
+      color: green;
+    }
+
+    .group-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      .text {
+        font-size: 1rem;
+      }
+
+      .link-back {
+        margin-top: 60px;
+        width: 300px;
+      }
+    }
+  }
+}

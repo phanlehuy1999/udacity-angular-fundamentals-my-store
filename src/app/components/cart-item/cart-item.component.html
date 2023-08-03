@@ -1,0 +1,43 @@
+<div class="cart-item">
+  <img class="product-image" [src]="product.productItem.url" alt=""/>
+  <div class="product-info">
+    <h3 class="product-name">{{ product.productItem.name }}</h3>
+    <h3 class="product-price">${{ product.productItem.price }}</h3>
+  </div>
+  <div class="product-quantity">
+    <button
+      mat-icon-button
+      color="primary"
+      (click)="changeQuantity($event, 'remove')"
+      [disabled]="product.quantity <= 1"
+    >
+      <mat-icon>remove</mat-icon>
+    </button>
+    <mat-form-field class="quantity-input">
+      <input
+        matInput
+        min="1"
+        type="number"
+        (click)="$event.preventDefault(); $event.stopPropagation()"
+        (input)="inputQuantity($event)"
+        [ngModel]="product.quantity"
+      />
+    </mat-form-field>
+    <button
+      mat-icon-button
+      color="primary"
+      (click)="changeQuantity($event, 'add')"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  <div>
+    <button
+      mat-stroked-button
+      color="warn"
+      (click)="deleteProduct($event)"
+    >
+      Delete
+    </button>
+  </div>
+</div>

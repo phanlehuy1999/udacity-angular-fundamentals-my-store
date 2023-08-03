@@ -1,0 +1,12 @@
+<div class="confirmation">
+  <span class="success">Success!</span>
+  <div class="group-text">
+    <span class="text">Thank you, <b>{{ data.fullName }}</b></span>
+    <span class="text">Your <b>${{ data.total }}</b> order is confirmed!</span>
+    <span class="text">Orders will be delivered to <b>${{ data.address }}</b> within the next 3 days</span>
+    <button mat-stroked-button color="primary" class="link-back" routerLink="/">
+      <mat-icon>arrow_back</mat-icon>
+      Back to product list
+    </button>
+  </div>
+</div>

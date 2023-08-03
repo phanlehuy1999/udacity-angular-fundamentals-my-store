@@ -1,0 +1,28 @@
+<div class="product-item-detail">
+  <mat-card class="image-border">
+    <img mat-card-image [src]="productItem?.url" alt="Product Image">
+  </mat-card>
+  <div class="product-info">
+    <h2>{{ productItem?.name }}</h2>
+    <h3>${{ productItem?.price }}</h3>
+    <h3>{{ productItem?.description }}</h3>
+    <mat-form-field class="select-quantity">
+      <mat-select [(ngModel)]="selectedQuantity" (change)="onChangeQuantity($event)">
+        <mat-option
+          *ngFor="let num of quantities"
+          [value]="num"
+        >
+          {{ num }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button class="button-add" mat-fab extended color="primary" (click)="addToCart()">
+      <mat-icon>shopping_cart</mat-icon>
+      Add to cart
+    </button>
+    <button mat-stroked-button color="primary" class="link-back" routerLink="/">
+      <mat-icon>arrow_back</mat-icon>
+      Back to product list
+    </button>
+  </div>
+</div>

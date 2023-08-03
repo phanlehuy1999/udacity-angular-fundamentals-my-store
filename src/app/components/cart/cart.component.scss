@@ -1,0 +1,44 @@
+:host {
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .product-list {
+    height: calc(100vh - 64px - 40px);
+    overflow-y: scroll;
+  }
+
+  .cart {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    padding: 20px 40px;
+    gap: 40px;
+  }
+
+  .mat-mdc-selection-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mat-mdc-list-option {
+    height: 150px;
+  }
+
+  .confirmation-info {
+    height: fit-content;
+    padding-bottom: 10px;
+  }
+
+  .mat-mdc-card-content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .button-common {
+    height: 48px;
+    margin-top: 20px;
+    margin-right: 8px;
+  }
+}
