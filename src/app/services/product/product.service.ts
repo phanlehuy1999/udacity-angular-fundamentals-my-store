@@ -26,7 +26,7 @@ export class ProductService {
     let currentCart = JSON.parse(this.localStorage.getItem('udacity-my-store-products') || '[]');
     const productIndex = currentCart.findIndex((item: ProductQuantity) => item.productItem.id === product.productItem.id);
     if (productIndex !== -1) {
-      currentCart[productIndex].quantity = currentCart[productIndex].quantity + 1;
+      currentCart[productIndex].quantity = currentCart[productIndex].quantity + product.quantity;
     } else {
       currentCart = [...currentCart, product];
     }

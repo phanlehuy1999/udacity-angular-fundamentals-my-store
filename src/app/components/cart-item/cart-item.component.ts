@@ -24,12 +24,7 @@ export class CartItemComponent {
   }
 
   inputQuantity($event: any) {
-    const allowInput = /^[0-9]*$/;
-    if (!allowInput.test($event.target.value)) {
-      $event.preventDefault();
-      return;
-    }
-    this.product.quantity = $event.target.value;
+    this.product.quantity = $event;
     this.quantityChanged.emit(true);
   }
 

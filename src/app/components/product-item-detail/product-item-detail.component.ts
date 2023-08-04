@@ -38,7 +38,7 @@ export class ProductItemDetailComponent implements OnInit, OnDestroy {
   }
 
   onChangeQuantity($event: any) {
-    this.selectedQuantity = $event.value;
+    this.selectedQuantity = $event;
   }
 
 

@@ -7,7 +7,7 @@
     <h3>${{ productItem?.price }}</h3>
     <h3>{{ productItem?.description }}</h3>
     <mat-form-field class="select-quantity">
-      <mat-select [(ngModel)]="selectedQuantity" (change)="onChangeQuantity($event)">
+      <mat-select [(ngModel)]="selectedQuantity" (ngModelChange)="onChangeQuantity($event)">
         <mat-option
           *ngFor="let num of quantities"
           [value]="num"

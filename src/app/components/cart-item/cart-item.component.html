@@ -19,8 +19,8 @@
         min="1"
         type="number"
         (click)="$event.preventDefault(); $event.stopPropagation()"
-        (input)="inputQuantity($event)"
-        [ngModel]="product.quantity"
+        (ngModelChange)="inputQuantity($event)"
+        [(ngModel)]="product.quantity"
       />
     </mat-form-field>
     <button
